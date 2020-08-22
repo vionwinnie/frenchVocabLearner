@@ -1,0 +1,10 @@
+## Look up dictionary
+https://dumps.wikimedia.org/frwiktionary/20200301/
+https://github.com/pquentin/wiktionary-translations
+
+## Hash Tables
+https://www.cs.purdue.edu/cgvlab/courses/251/lectures/slides/03.01-HashTables.pdf
+https://coderbook.com/@marcus/how-to-create-a-hash-table-from-scratch-in-python/
+https://people.eecs.berkeley.edu/~jrs/61b/lec/21
+
+
