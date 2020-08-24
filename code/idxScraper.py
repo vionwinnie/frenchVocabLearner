@@ -23,6 +23,9 @@ def getArchiveLinks(daystart, dayend, monthstart, monthend):
     return archive_links
 
 def getArticlesLinks(archive_links):
+    """
+    Return articles links and their titles as two lists
+    """
     links_non_abonne = []
     for link in archive_links:
         html = None
@@ -32,7 +35,7 @@ def getArticlesLinks(archive_links):
             print("text url not valid", link)
         
         links_non_abonne = []
-
+        titles_non_abonne = []
         if html:
             soup = BeautifulSoup(html, "html.parser")
             temp = soup.find_all(class_="teaser")
@@ -40,11 +43,14 @@ def getArticlesLinks(archive_links):
                 # condition here : if no span sr-only (abonnes)
                 if not item.find('span', {'class': 'sr-only'}):
                     links_non_abonne.append(item.find('a')['href'])
-    return links_non_abonne
+                    titles_non_abonne.append(item.find('h3',{'class':'teaser__title'}).text)
+    return links_non_abonne,titles_non_abonne
 
 if __name__ == '__main__':
-    links = getArticlesLinks([today_url])
+    today_url = getTodayURL()
+    links,titles = getArticlesLinks([today_url])
     print("Links available for today: {}".format(len(links)))
-
+    for title in titles:
+        print(title)
     archive_links = getArchiveLinks(1,29,1,9)
     print(archive_links[:5])

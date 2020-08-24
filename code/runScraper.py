@@ -19,8 +19,8 @@ today_url = idxScraper.getTodayURL()
 today_dt_str = date.today().strftime("%Y-%m-%d")
 
 ## Retrieve article links and scraper
-links = idxScraper.getArticlesLinks([today_url])
-print("{} article links are retrieved for today")
+links,titles = idxScraper.getArticlesLinks([today_url])
+print("{} article links are retrieved for today".format(len(links)))
 
 ## Setup Mongo Connection
 conn = connectMongo.connect_mongo('leMonde','news_article')
