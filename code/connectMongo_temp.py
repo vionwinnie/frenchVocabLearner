@@ -6,10 +6,10 @@ from random import randint
 def connect_mongo(database_name,collection_name):
     ## info
     db_name = 'article'
-    mongoDbUser='defaultUser'
-    mongoDbPwd='h8LvalTFdNbvOxOI'
+    mongoDbUser='xxx'
+    mongoDbPwd='xxx'
 
-    mongo_url = "mongodb+srv://{user_name}:{pwd}@frenchvocab1.b6ec8.gcp.mongodb.net/{dbname}?retryWrites=true&w=majority".format(user_name=mongoDbUser,pwd=mongoDbPwd,dbname=db_name)
+    mongo_url = "mongodb+srv://{user_name}:{pwd}@{url}/{dbname}?retryWrites=true&w=majority".format(user_name=mongoDbUser,pwd=mongoDbPwd,dbname=db_name)
 
     client = MongoClient(mongo_url)
     db=getattr(client,database_name)
