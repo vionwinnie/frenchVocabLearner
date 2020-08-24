@@ -7,4 +7,7 @@ https://www.cs.purdue.edu/cgvlab/courses/251/lectures/slides/03.01-HashTables.pd
 https://coderbook.com/@marcus/how-to-create-a-hash-table-from-scratch-in-python/
 https://people.eecs.berkeley.edu/~jrs/61b/lec/21
 
+## Firebase
+https://firebase.google.com/docs/database/admin/start?authuser=0
+
 
