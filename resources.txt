@@ -1,4 +1,4 @@
-## Look up dictionary
+## Look up dictionary  
 https://dumps.wikimedia.org/frwiktionary/20200301/
 https://github.com/pquentin/wiktionary-translations
 
