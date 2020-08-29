@@ -73,6 +73,8 @@ WSGI_APPLICATION = 'vocabLearner.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+FIREBASE_ORM_CERTIFICATE = '/Users/mitchellchang/Documents/credentials/frenchvocablearner-6c6727c36e1c.json'
+FIREBASE_ORM_BUCKET_NAME = 'frenchvocablearner.appspot.com'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
