@@ -8,7 +8,7 @@ from collections import defaultdict
 from urllib.request import urlopen  # standard python module
 from bs4 import BeautifulSoup
 from urllib.error import HTTPError,URLError
-import idxScraper,articleScraper,connectMongo,connectFirestore
+import idxScraper,articleScraper,connectMongo_temp,connectFirestore
 import time
 
 ## Reference
@@ -28,7 +28,7 @@ N=25
 if sinkType == "firestore":
     conn = connectFirestore.connect('leMonde') 
 elif sinkType== "mongoDb":
-    conn = connectMongo.connect_mongo('leMonde','news_article')
+    conn = connectMongo_temp.connect_mongo('leMonde','news_article')
 else:
     raise IndexError("Sink Type Not Specified")
 
