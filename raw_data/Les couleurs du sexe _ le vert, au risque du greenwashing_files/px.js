@@ -1,0 +1,1 @@
+var abp=abp||false;var script=new Error().stack;if(script){var query=script.replace(/^[^\?]+\??/,"").split("&");var params={};for(var i=0;i<query.length;i++){var param=query[i].split("=");params[param[0]]=param[1].split(":")[0];}if(params["ch"]==1)abp=true;else if(params["ch"]==2)abp=abp&&false;}

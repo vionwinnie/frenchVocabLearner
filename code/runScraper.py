@@ -26,7 +26,7 @@ print("{} article links are retrieved for today".format(len(links)))
 sinkType = "firestore"
 N=25
 if sinkType == "firestore":
-    conn = connectFirestore.connect('leMonde') 
+    conn = connectFirestore.connect('lemonde') 
 elif sinkType== "mongoDb":
     conn = connectMongo_temp.connect_mongo('leMonde','news_article')
 else:

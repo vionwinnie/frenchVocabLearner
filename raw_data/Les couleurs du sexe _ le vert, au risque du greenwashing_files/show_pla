@@ -1,0 +1,1 @@
+window.ctcgFrameApi && ctcgFrameApi.postMessageToController({eventName : "FALLBACK_COLLAPSE", payload : { idx : 0, id : 87158,}});__ctcg_87158_0_exec.bf("",null,null)
