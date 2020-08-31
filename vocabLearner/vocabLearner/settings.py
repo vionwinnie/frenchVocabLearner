@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = yaml.safe_load(open("/Users/mitchellchang/Documents/credentials/config.yml"))
+SECRET_KEY = yaml.safe_load(open("/home/winnie/petProjects/credentials/config.yaml"))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'learner'
 ]
 
 MIDDLEWARE = [
@@ -73,6 +74,8 @@ WSGI_APPLICATION = 'vocabLearner.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+FIREBASE_ORM_CERTIFICATE = '/Users/mitchellchang/Documents/credentials/frenchvocablearner-6c6727c36e1c.json'
+FIREBASE_ORM_BUCKET_NAME = 'frenchvocablearner.appspot.com'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

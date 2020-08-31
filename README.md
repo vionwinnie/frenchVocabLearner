@@ -32,4 +32,15 @@
 	- Display by Article
 	- Display by Part of Speech
 
+## Create Local Testing Environment
+- `conda create -n frenchVocab python=3.7 pip`
+- `conda activate frenchVocab`
+- `pip install -r requirements.txt`
+
+## how to test the model using the interactive shell
+- `python manage.py shell`
+- `from learner.models import Lemonde`
+- `articles = Lemonde.collection.fetch()`
+- `for article in articles:
+        print(article.title)   `
 
