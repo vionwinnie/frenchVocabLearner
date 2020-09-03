@@ -14,14 +14,26 @@ import os
 import yaml
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..','..'))
-CREDENTIAL_DIR = os.path.abspath(os.path.join(PROJECT_DIR,'..'))
+CREDENTIAL_DIR = os.path.abspath(os.path.join(PROJECT_DIR,'..','credentials'))
+config_yaml_file_name = 'config.yml'
+YAML_FILE_PATH = os.path.join(CREDENTIAL_DIR,config_yaml_file_name)
+
+firebase_certificate_name = 'frenchvocablearner-6c6727c36e1c.json'
+FIREBASE_KEY_PATH = os.path.join(CREDENTIAL_DIR,firebase_certificate_name)
+
+database_name = 'db.sqlite3'
+DATABASE_PATH = os.path.join(PROJECT_DIR,database_name)
+
+#print(CREDENTIAL_DIR)
+#print(YAML_FILE_PATH)
+#print(FIREBASE_KEY_PATH)
+#print(DATABASE_PATH)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = yaml.safe_load(CREDENTIAL_DIR+'/config.yaml')
-# SECRET_KEY = yaml.safe_load(open(os.path.join(BASE_DIR, "credentials/config.yaml")))
+SECRET_KEY = yaml.safe_load(YAML_FILE_PATH)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -75,12 +87,12 @@ WSGI_APPLICATION = 'vocabLearner.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-FIREBASE_ORM_CERTIFICATE = CREDENTIAL_DIR+ 'frenchvocablearner-6c6727c36e1c.json'
+FIREBASE_ORM_CERTIFICATE = FIREBASE_KEY_PATH
 FIREBASE_ORM_BUCKET_NAME = 'frenchvocablearner.appspot.com'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(PROJECT_DIR, 'db.sqlite3'),
+        'NAME': DATABASE_PATH,
     }
 }
 
