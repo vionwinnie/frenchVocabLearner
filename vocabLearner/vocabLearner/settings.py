@@ -13,14 +13,14 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import yaml
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..','..'))
+CREDENTIAL_DIR = os.path.abspath(os.path.join(PROJECT_DIR,'..'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = yaml.safe_load(open("/home/winnie/petProjects/credentials/config.yaml"))
+SECRET_KEY = yaml.safe_load(CREDENTIAL_DIR+'/config.yaml')
 # SECRET_KEY = yaml.safe_load(open(os.path.join(BASE_DIR, "credentials/config.yaml")))
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -75,13 +75,12 @@ WSGI_APPLICATION = 'vocabLearner.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-FIREBASE_ORM_CERTIFICATE = '/Users/mitchellchang/Documents/credentials/frenchvocablearner-6c6727c36e1c.json'
-# FIREBASE_ORM_CERTIFICATE = open(os.path.join(BASE_DIR ,'credentials/frenchvocablearner-6c6727c36e1c.json'))
+FIREBASE_ORM_CERTIFICATE = CREDENTIAL_DIR+ 'frenchvocablearner-6c6727c36e1c.json'
 FIREBASE_ORM_BUCKET_NAME = 'frenchvocablearner.appspot.com'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(PROJECT_DIR, 'db.sqlite3'),
     }
 }
 
