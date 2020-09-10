@@ -89,12 +89,12 @@ WSGI_APPLICATION = 'vocabLearner.wsgi.application'
 
 FIREBASE_ORM_CERTIFICATE = FIREBASE_KEY_PATH
 FIREBASE_ORM_BUCKET_NAME = 'frenchvocablearner.appspot.com'
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': DATABASE_PATH,
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': DATABASE_PATH,
+#     }
+# }
 
 
 # Password validation
