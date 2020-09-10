@@ -4,3 +4,7 @@ from django.http import HttpResponse
 
 def index(req):
     return HttpResponse("yo this is the landing page")
+
+
+def content(req):
+    return HttpResponse("the content of the article here")
