@@ -8,3 +8,5 @@ def index(req):
 
 def content(req):
     return HttpResponse("the content of the article here")
+
+

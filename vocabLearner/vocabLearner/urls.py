@@ -20,3 +20,4 @@ urlpatterns = [
     path('', include('learner.urls')),
     path('admin/', admin.site.urls),
 ]
+
