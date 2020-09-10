@@ -16,7 +16,7 @@ class Lemonde(Model):
 
 
 if __name__ == '__main__':
-    articles= Lemonde.collection.fetch()
+    articles= Lemonde.collection.fetch() 
     for article in articles:
         print(article.id, article.num_paragraphs)
         if article.paragraphs:
